@@ -1,26 +1,52 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* ── Spacing ── */
+  --spacing: 0.25rem;
+
+  /* ── Backgrounds ── */
+  --color-bg: #0a0a0a;
+  --color-bg-2: #111111;
+  --color-bg-3: #1a1a1a;
+  --color-bg-4: #222222;
+
+  /* ── Brand Orange ── */
+  --color-orange: #e8920a;
+  --color-orange-2: #f5a623;
+  --color-orange-3: #7a4005;
+
+  /* ── Felt Blue (dekoratif) ── */
+  --color-blue: #1e90ff;
+
+  /* ── Text ── */
+  --color-text: #f5f5f5;
+  --color-text-2: #aaaaaa;
+  --color-text-3: #666666;
+
+  /* ── Borders ── */
+  --color-border: #2a2a2a;
+  --color-border-2: #333333;
+
+  /* ── Fonts ── */
+  --font-bebas: var(--font-bebas-neue);
+  --font-condensed: var(--font-barlow-condensed);
+  --font-body: var(--font-barlow);
+
+  /* ── Layout ── */
+  --spacing-nav: 64px;
+  --spacing-section-px: 2.5rem;
+  --width-max: 1140px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body), "Barlow", sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  overflow-x: hidden;
 }

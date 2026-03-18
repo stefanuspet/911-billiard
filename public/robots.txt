@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://911billiard.vercel.app
+
+# Sitemaps
+Sitemap: https://911billiard.vercel.app/sitemap.xml
