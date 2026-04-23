@@ -21,7 +21,7 @@ export default function TournamentItem({ tournament }: TournamentItemProps) {
 
       {/* Date block */}
       <div className="bg-bg-3 w-[64px] h-[80px] shrink-0 flex flex-col items-center justify-center border-r border-border">
-        <div className="font-bebas text-[28px] text-orange leading-none">
+        <div className="font-condensed text-[28px] text-orange leading-none">
           {tournament.day}
         </div>
         <div className="font-condensed font-bold text-[11px] tracking-[1px] uppercase text-text-2">

@@ -58,7 +58,7 @@ export default function PackageGrid() {
         <div className="flex justify-center mb-4">
           <SectionTag>PAKET FRANCHISE</SectionTag>
         </div>
-        <h2 className="font-bebas text-[clamp(32px,4vw,52px)] leading-none tracking-[1px]">
+        <h2 className="font-condensed text-[clamp(32px,4vw,52px)] leading-none tracking-[1px]">
           PILIH PAKET YANG SESUAI
         </h2>
       </div>

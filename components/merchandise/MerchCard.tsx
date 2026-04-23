@@ -33,7 +33,7 @@ export default function MerchCard({ item }: MerchCardProps) {
         <div className="font-condensed font-bold text-[14px] mb-2">
           {item.name}
         </div>
-        <div className="font-bebas text-[22px] text-orange leading-none">
+        <div className="font-condensed text-[22px] text-orange leading-none">
           {formatPrice(item.price)}
           {item.originalPrice && (
             <span className="font-body text-[13px] text-text-3 line-through ml-2">

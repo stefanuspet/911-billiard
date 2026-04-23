@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import HeroSection from "@/components/home/HeroSection";
-import PioneerStrip from "@/components/home/PioneerStrip";
 import FeaturedBranches from "@/components/home/FeaturedBranches";
 import GalleryStrip from "@/components/home/GalleryStrip";
 import WhySection from "@/components/home/WhySection";
@@ -8,11 +7,11 @@ import MemberSection from "@/components/home/MemberSection";
 import FranchiseCTA from "@/components/home/FranchiseCTA";
 
 export const metadata: Metadata = {
-  title: "911 Billiard™ — Tempat Billiard Terbesar di Indonesia",
+  title: "911 Billiard™ — the largest billiard chain in Indonesia",
   description:
     "911 Billiard adalah jaringan billiard terbesar di Indonesia dengan 22+ zona aktif di Jakarta, Tangerang, Depok, Yogyakarta, Solo, Pontianak, Singkawang, dan Balikpapan.",
   openGraph: {
-    title: "911 Billiard™ — Tempat Billiard Terbesar di Indonesia",
+    title: "911 Billiard™ — the largest billiard chain in Indonesia",
     description:
       "22+ zona aktif di seluruh Indonesia. VIP Room, Kaizen Tables, Carbon Fiber Cue, Lounge & Bar.",
     images: ["/images/og-image.jpg"],
@@ -48,7 +47,6 @@ export default function HomePage() {
       />
       <main>
         <HeroSection />
-        <PioneerStrip />
         <FeaturedBranches />
         <GalleryStrip />
         <WhySection />

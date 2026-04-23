@@ -17,7 +17,7 @@ export default function AboutHero() {
         />
         {/* Overlay badge */}
         <div className="absolute bottom-0 left-0 right-0 bg-bg/[0.85] px-5 sm:px-8 py-4 sm:py-6">
-          <div className="font-bebas text-[clamp(28px,4vw,44px)] leading-none tracking-[1px]">
+          <div className="font-condensed text-[clamp(28px,4vw,44px)] leading-none tracking-[1px]">
             THE LARGEST <span className="text-orange">BILLIARD CHAIN</span>
             <br />
             IN INDONESIA
@@ -30,7 +30,7 @@ export default function AboutHero() {
         <div className="mb-5">
           <SectionTag>TENTANG KAMI</SectionTag>
         </div>
-        <h1 className="font-bebas text-[clamp(36px,4vw,52px)] leading-none tracking-[1px] mb-6">
+        <h1 className="font-condensed text-[clamp(36px,4vw,52px)] leading-none tracking-[1px] mb-6">
           911 BILLIARD™
         </h1>
         <p className="font-body text-[14px] text-text-2 leading-relaxed mb-4">

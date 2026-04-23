@@ -11,7 +11,7 @@ interface ButtonProps {
 }
 
 const baseClass =
-  "inline-block font-condensed font-bold text-[15px] tracking-[1px] uppercase px-[30px] py-[13px] rounded-none transition-colors duration-200 cursor-pointer";
+  "inline-block font-condensed font-bold text-[15px] tracking-[1px] uppercase px-[30px] py-[13px] rounded-xl transition-colors duration-200 cursor-pointer";
 
 const variantClass = {
   primary: "bg-orange text-black border-0 hover:bg-orange-2",

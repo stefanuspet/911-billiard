@@ -29,7 +29,7 @@ export default function PackageCard({
         {name}
       </div>
 
-      <div className="font-bebas text-[38px] text-orange leading-none mb-1">
+      <div className="font-condensed text-[38px] text-orange leading-none mb-1">
         {price}
       </div>
       {priceNote && (
@@ -40,7 +40,7 @@ export default function PackageCard({
       <ul className="space-y-3 flex-1 mb-8">
         {features.map((f) => (
           <li key={f} className="flex items-start gap-3">
-            <span className="text-orange font-bebas text-[16px] leading-none mt-[3px]">
+            <span className="text-orange font-condensed text-[16px] leading-none mt-[3px]">
               ✓
             </span>
             <span className="font-body text-[13px] text-text-2">{f}</span>

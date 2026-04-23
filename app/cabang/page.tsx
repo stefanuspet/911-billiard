@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import PageHeader from "@/components/ui/PageHeader";
 import CityFilter from "@/components/branches/CityFilter";
 import { branches } from "@/data/branches";
@@ -62,11 +63,23 @@ export default function CabangPage() {
         }}
       />
       <main>
-        <PageHeader
-          tag="DIREKTORI ZONA"
-          title="SEMUA CABANG"
-          subtitle="Filter berdasarkan kota untuk menemukan zona 911 terdekat."
-        />
+        <div className="relative overflow-hidden">
+          <PageHeader
+            tag="DIREKTORI ZONA"
+            title="SEMUA CABANG"
+            subtitle="Filter berdasarkan kota untuk menemukan zona 911 terdekat."
+          />
+          <div className="absolute right-10 bottom-0 hidden lg:block pointer-events-none">
+            <Image
+              src="/images/maskot/maskot_2.png"
+              alt=""
+              width={180}
+              height={180}
+              className="object-contain"
+              aria-hidden="true"
+            />
+          </div>
+        </div>
         <div className="max-w-[1140px] mx-auto px-5 sm:px-10 pb-12 sm:pb-20">
           <CityFilter />
         </div>

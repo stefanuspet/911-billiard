@@ -15,6 +15,10 @@
   --color-orange-2: #f5a623;
   --color-orange-3: #7a4005;
 
+  /* ── Teal (street accent) ── */
+  --color-teal: #00b4c8;
+  --color-teal-2: #008fa0;
+
   /* ── Felt Blue (dekoratif) ── */
   --color-blue: #1e90ff;
 
@@ -28,7 +32,6 @@
   --color-border-2: #333333;
 
   /* ── Fonts ── */
-  --font-bebas: var(--font-bebas-neue);
   --font-condensed: var(--font-barlow-condensed);
   --font-body: var(--font-barlow);
 
@@ -45,7 +48,7 @@ html {
 body {
   background-color: var(--color-bg);
   color: var(--color-text);
-  font-family: var(--font-body), "Barlow", sans-serif;
+  font-family: var(--font-body), "Nunito Sans", sans-serif;
   font-size: 15px;
   line-height: 1.6;
   overflow-x: hidden;

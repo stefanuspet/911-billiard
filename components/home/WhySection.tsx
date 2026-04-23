@@ -29,28 +29,31 @@ const features: { icon: ReactNode; title: string; desc: string }[] = [
 
 export default function WhySection() {
   return (
-    <section className="py-12 sm:py-20 px-5 sm:px-10">
+    <section className="bg-bg-2 py-16 sm:py-24 px-5 sm:px-10">
       <div className="max-w-[1140px] mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-[1px] bg-border">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Left — features */}
-          <div className="bg-bg p-6 sm:p-10 lg:p-16">
+          <div>
             <SectionTag>SAFE & COMFORT</SectionTag>
-            <h2 className="font-bebas text-[clamp(38px,5vw,60px)] tracking-[1px] leading-none mb-2">
-              KENAPA 911 BILLIARD?
+            <h2 className="font-condensed font-black text-[clamp(36px,5vw,58px)] leading-none uppercase mb-3">
+              Kenapa <span className="text-orange">911 Billiard?</span>
             </h2>
-            <div className="w-9 h-[3px] bg-orange mt-5 mb-10" />
+            <p className="font-body text-[14px] text-text-2 max-w-[380px] mb-10 leading-[1.8]">
+              Lebih dari sekadar tempat billiard — ini adalah pengalaman premium
+              yang accessible.
+            </p>
 
-            <div className="grid grid-cols-2 gap-[1px] bg-border">
+            <div className="grid grid-cols-2 gap-4">
               {features.map((f) => (
                 <div
                   key={f.title}
-                  className="bg-bg-2 hover:bg-bg-3 transition-colors p-4 sm:p-6 lg:p-8"
+                  className="rounded-2xl p-5 border border-teal/20 bg-teal/5 hover:border-teal/40 transition-colors duration-200"
                 >
-                  <div className="text-[28px] text-orange mb-4">{f.icon}</div>
-                  <div className="font-condensed font-bold text-[17px] text-orange mb-2">
+                  <div className="text-[24px] mb-3 text-teal">{f.icon}</div>
+                  <div className="font-condensed font-bold text-[16px] mb-1 text-text">
                     {f.title}
                   </div>
-                  <p className="text-[13px] text-text-2 leading-[1.6]">
+                  <p className="font-body text-[12px] text-text-2 leading-[1.6]">
                     {f.desc}
                   </p>
                 </div>
@@ -59,36 +62,36 @@ export default function WhySection() {
           </div>
 
           {/* Right — photo */}
-          <div className="relative bg-bg">
-            <div className="relative h-[440px] overflow-hidden">
+          <div className="relative rounded-3xl overflow-hidden border border-white/8">
+            <div className="relative h-[460px]">
               <Image
                 src="/images/hero/bar.png"
                 alt="Interior cabang 911 Billiard dengan fasilitas premium"
                 fill
-                className="object-cover brightness-[0.7]"
+                className="object-cover brightness-[0.75]"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
-              {/* Bottom gradient + hashtag */}
               <div
-                className="absolute bottom-0 left-0 right-0 p-8"
+                className="absolute inset-0"
                 style={{
                   background:
-                    "linear-gradient(transparent, rgba(10,10,10,0.9))",
+                    "linear-gradient(to bottom, transparent 50%, rgba(10,10,10,0.85) 100%)",
                 }}
-              >
-                <div className="font-bebas text-[20px] text-orange tracking-[2px]">
+              />
+
+              {/* Bottom label */}
+              <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between">
+                <div className="font-condensed font-black text-[22px] text-white tracking-[2px]">
                   #IAM911BILLIARD
                 </div>
-              </div>
-            </div>
-
-            {/* 500 SQM badge */}
-            <div className="absolute top-6 right-6 bg-orange px-5 py-3 text-center">
-              <div className="font-bebas text-[28px] text-black leading-none">
-                500
-              </div>
-              <div className="font-condensed text-[12px] text-black tracking-[1px] leading-none mt-1">
-                SQM MIN.
+                <div className="bg-orange rounded-2xl px-4 py-2 text-center">
+                  <div className="font-condensed font-black text-[24px] text-black leading-none">
+                    500
+                  </div>
+                  <div className="font-body text-[10px] text-black/80 tracking-[1px] mt-[2px]">
+                    SQM MIN.
+                  </div>
+                </div>
               </div>
             </div>
           </div>

@@ -13,7 +13,7 @@ export default function StatsBand() {
           key={stat.label}
           className="bg-bg-3 px-8 py-8 text-center"
         >
-          <div className="font-bebas text-[48px] text-orange leading-none mb-1">
+          <div className="font-condensed text-[48px] text-orange leading-none mb-1">
             {stat.number}
           </div>
           <div className="font-condensed font-bold text-[11px] tracking-[2px] uppercase text-text-2">

@@ -17,7 +17,7 @@ export default function MerchGrid() {
           <div className="font-condensed font-bold text-[13px] tracking-[1px] text-text-2 uppercase mb-1">
             Official Store
           </div>
-          <div className="font-bebas text-[22px] leading-none">
+          <div className="font-condensed text-[22px] leading-none">
             TEMUKAN SEMUA PRODUK DI TOKOPEDIA
           </div>
         </div>

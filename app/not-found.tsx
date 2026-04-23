@@ -5,11 +5,11 @@ export default function NotFound() {
     <main className="min-h-screen flex items-center justify-center px-5 sm:px-10 py-20">
       <div className="max-w-[1140px] mx-auto w-full flex flex-col items-center text-center">
 
-        <div className="font-bebas text-[120px] sm:text-[160px] text-orange leading-none">
+        <div className="font-condensed text-[120px] sm:text-[160px] text-orange leading-none">
           404
         </div>
 
-        <h1 className="font-bebas text-[28px] sm:text-[38px] tracking-[1px] leading-tight mb-3">
+        <h1 className="font-condensed text-[28px] sm:text-[38px] tracking-[1px] leading-tight mb-3">
           HALAMAN TIDAK DITEMUKAN
         </h1>
         <p className="font-body text-[15px] text-text-2 leading-[1.7] mb-8 max-w-[400px]">

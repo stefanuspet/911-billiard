@@ -39,7 +39,7 @@ export default function Timeline() {
           {/* Orange dot */}
           <div className="absolute -left-[25px] top-[5px] w-3 h-3 bg-orange" />
 
-          <div className="font-bebas text-[20px] text-orange leading-none mb-1">
+          <div className="font-condensed text-[20px] text-orange leading-none mb-1">
             {item.year}
           </div>
           <div className="font-condensed font-bold text-[15px] mb-1">

@@ -23,6 +23,17 @@ export default function FranchiseHero() {
           sizes="(max-width: 1024px) 100vw, 50vw"
           priority
         />
+        {/* Maskot */}
+        <div className="absolute bottom-0 right-0 hidden lg:block pointer-events-none z-10">
+          <Image
+            src="/images/maskot/maskot_3.png"
+            alt=""
+            width={220}
+            height={306}
+            className="object-contain"
+            aria-hidden="true"
+          />
+        </div>
         {/* 22+ Zona badge */}
         <div className="absolute bottom-6 left-6 bg-orange text-black font-condensed font-bold text-[13px] tracking-[1px] uppercase px-4 py-2">
           22+ ZONA AKTIF
@@ -34,7 +45,7 @@ export default function FranchiseHero() {
         <div className="mb-5">
           <SectionTag>PELUANG BISNIS</SectionTag>
         </div>
-        <h1 className="font-bebas text-[clamp(40px,5vw,64px)] leading-none tracking-[1px] mb-6">
+        <h1 className="font-condensed text-[clamp(40px,5vw,64px)] leading-none tracking-[1px] mb-6">
           BUKA CABANG <span className="text-orange">911 BILLIARD</span>
         </h1>
         <p className="text-text-2 text-[15px] mb-8 max-w-[460px]">
@@ -48,7 +59,7 @@ export default function FranchiseHero() {
         <ul className="space-y-3 mb-10">
           {keunggulan.map((item) => (
             <li key={item} className="flex items-start gap-3">
-              <span className="text-orange font-bebas text-[18px] leading-none mt-[2px]">
+              <span className="text-orange font-condensed text-[18px] leading-none mt-[2px]">
                 ✓
               </span>
               <span className="font-body text-[14px] text-text-2">{item}</span>

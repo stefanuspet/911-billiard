@@ -52,7 +52,7 @@ export default function FranchiseForm() {
           <div className="font-condensed font-bold text-[11px] tracking-[4px] uppercase text-orange mb-3">
             MULAI SEKARANG
           </div>
-          <h2 className="font-bebas text-[clamp(32px,4vw,52px)] leading-none tracking-[1px] mb-2">
+          <h2 className="font-condensed text-[clamp(32px,4vw,52px)] leading-none tracking-[1px] mb-2">
             DAFTAR FRANCHISE
           </h2>
           <p className="text-text-2 text-[14px] mb-10">

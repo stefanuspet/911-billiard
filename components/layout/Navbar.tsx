@@ -31,9 +31,9 @@ export default function Navbar() {
           <Image
             src="/images/logo/logo.png"
             alt="911 Billiard"
-            width={160}
+            width={100}
             height={71}
-            className="object-contain w-[110px] sm:w-[160px] h-auto"
+            className="object-contain md:w-27.5 sm:w-40 h-auto"
             priority
           />
         </Link>
@@ -59,7 +59,7 @@ export default function Navbar() {
         {/* Desktop CTA */}
         <Link
           href="/cabang"
-          className="hidden md:block bg-orange text-black font-condensed font-bold text-[14px] tracking-[1px] uppercase px-[22px] py-[9px] hover:bg-orange-2 transition-colors duration-200"
+          className="hidden md:block bg-orange text-black font-condensed font-bold text-[14px] tracking-[1px] uppercase px-[22px] py-[9px] rounded-xl hover:bg-orange-2 transition-colors duration-200"
         >
           Cari Cabang
         </Link>
@@ -91,7 +91,7 @@ export default function Navbar() {
                 <Link
                   href={link.href}
                   onClick={() => setMenuOpen(false)}
-                  className={`font-bebas text-[28px] tracking-[2px] block py-2 no-underline transition-colors duration-200 ${
+                  className={`font-condensed text-[28px] tracking-[2px] block py-2 no-underline transition-colors duration-200 ${
                     pathname === link.href ? "text-orange" : "text-text"
                   }`}
                 >
@@ -104,7 +104,7 @@ export default function Navbar() {
             <Link
               href="/cabang"
               onClick={() => setMenuOpen(false)}
-              className="inline-block bg-orange text-black font-condensed font-bold text-[15px] tracking-[1px] uppercase px-[30px] py-[13px] hover:bg-orange-2 transition-colors duration-200"
+              className="inline-block bg-orange text-black font-condensed font-bold text-[15px] tracking-[1px] uppercase px-[30px] py-[13px] rounded-xl hover:bg-orange-2 transition-colors duration-200"
             >
               Cari Cabang
             </Link>

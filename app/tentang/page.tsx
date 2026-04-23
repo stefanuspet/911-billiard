@@ -76,7 +76,7 @@ export default function TentangPage() {
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-[1px] bg-border">
         {statsData.map((stat) => (
           <div key={stat.label} className="bg-bg-3 px-4 sm:px-8 py-6 sm:py-8 text-center">
-            <div className="font-bebas text-[42px] text-orange leading-none mb-1">
+            <div className="font-condensed text-[42px] text-orange leading-none mb-1">
               {stat.number}
             </div>
             <div className="font-condensed font-bold text-[11px] tracking-[1.5px] uppercase text-text-2">
