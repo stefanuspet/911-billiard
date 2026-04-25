@@ -47,9 +47,9 @@ export default function WhySection() {
               {features.map((f) => (
                 <div
                   key={f.title}
-                  className="rounded-2xl p-5 border border-teal/20 bg-teal/5 hover:border-teal/40 transition-colors duration-200"
+                  className="rounded-2xl p-5 border border-orange/20 bg-orange/5 hover:border-orange/40 transition-colors duration-200"
                 >
-                  <div className="text-[24px] mb-3 text-teal">{f.icon}</div>
+                  <div className="text-[24px] mb-3 text-orange">{f.icon}</div>
                   <div className="font-condensed font-bold text-[16px] mb-1 text-text">
                     {f.title}
                   </div>

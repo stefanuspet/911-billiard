@@ -33,16 +33,16 @@ const milestones = [
 
 export default function Timeline() {
   return (
-    <div className="relative pl-8 border-l-2 border-border-2 space-y-10">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
       {milestones.map((item) => (
-        <div key={item.year} className="relative">
-          {/* Orange dot */}
-          <div className="absolute -left-[25px] top-[5px] w-3 h-3 bg-orange" />
-
-          <div className="font-condensed text-[20px] text-orange leading-none mb-1">
+        <div
+          key={item.year}
+          className="bg-bg-2 border border-white/8 rounded-2xl p-6 hover:border-orange/30 transition-colors duration-200"
+        >
+          <div className="inline-block bg-orange text-black font-condensed font-bold text-[11px] tracking-[1px] uppercase px-3 py-[4px] rounded-full mb-4">
             {item.year}
           </div>
-          <div className="font-condensed font-bold text-[15px] mb-1">
+          <div className="font-condensed font-bold text-[16px] mb-2">
             {item.title}
           </div>
           <p className="font-body text-[13px] text-text-2 leading-relaxed">

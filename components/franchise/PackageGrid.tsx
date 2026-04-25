@@ -53,20 +53,25 @@ const packages = [
 
 export default function PackageGrid() {
   return (
-    <section className="max-w-[1140px] mx-auto px-10 py-20">
-      <div className="mb-10 text-center">
-        <div className="flex justify-center mb-4">
-          <SectionTag>PAKET FRANCHISE</SectionTag>
-        </div>
-        <h2 className="font-condensed text-[clamp(32px,4vw,52px)] leading-none tracking-[1px]">
-          PILIH PAKET YANG SESUAI
+    <section className="bg-bg px-5 sm:px-10 py-14 sm:py-20">
+      <div className="max-w-[1140px] mx-auto">
+      <div className="mb-10">
+        <SectionTag>PAKET FRANCHISE</SectionTag>
+        <h2 className="font-condensed font-black text-[clamp(32px,4vw,52px)] leading-none mt-2">
+          Pilih Paket{" "}
+          <span className="text-orange">Yang Sesuai</span>
         </h2>
+        <p className="font-body text-text-2 text-[14px] mt-4 max-w-[480px] leading-[1.8]">
+          Tiga paket tersedia sesuai luas tempat dan target bisnismu. Semua
+          paket sudah termasuk lisensi brand dan dukungan penuh dari franchisor.
+        </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-[1px] bg-border">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {packages.map((pkg) => (
           <PackageCard key={pkg.name} {...pkg} />
         ))}
+      </div>
       </div>
     </section>
   );

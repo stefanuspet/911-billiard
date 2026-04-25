@@ -1,13 +1,14 @@
 import SectionTag from "@/components/ui/SectionTag";
 import Button from "@/components/ui/Button";
-import { FaStar, FaUsers } from "react-icons/fa";
+import { FaStar, FaUsers, FaFemale, FaBullseye, FaTag, FaBolt } from "react-icons/fa";
 import { MdCardMembership } from "react-icons/md";
+import type { ReactNode } from "react";
 
-const benefits = [
-  { icon: "👩", title: "Ladies Free", desc: "Khusus member wanita" },
-  { icon: "🎯", title: "Single Free", desc: "Benefit member individu" },
-  { icon: "💰", title: "Diskon", desc: "Harga spesial member" },
-  { icon: "⚡", title: "Priority Queue", desc: "Waiting list prioritas" },
+const benefits: { icon: ReactNode; title: string; desc: string }[] = [
+  { icon: <FaFemale />, title: "Ladies Free", desc: "Khusus member wanita" },
+  { icon: <FaBullseye />, title: "Single Free", desc: "Benefit member individu" },
+  { icon: <FaTag />, title: "Diskon", desc: "Harga spesial member" },
+  { icon: <FaBolt />, title: "Priority Queue", desc: "Waiting list prioritas" },
 ];
 
 export default function MemberSection() {
@@ -17,15 +18,15 @@ export default function MemberSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
           {/* Left — big stat card */}
           <div
-            className="relative rounded-3xl p-8 sm:p-10 overflow-hidden border border-teal/20 flex flex-col justify-between"
-            style={{ background: "rgba(0,180,200,0.06)" }}
+            className="relative rounded-3xl p-8 sm:p-10 overflow-hidden border border-orange/20 flex flex-col justify-between"
+            style={{ background: "rgba(232,146,10,0.06)" }}
           >
             {/* Glow */}
             <div
               className="absolute top-0 right-0 w-[60%] h-[60%] pointer-events-none"
               style={{
                 background:
-                  "radial-gradient(ellipse at top right, rgba(0,180,200,0.12) 0%, transparent 70%)",
+                  "radial-gradient(ellipse at top right, rgba(232,146,10,0.12) 0%, transparent 70%)",
               }}
             />
 
@@ -65,9 +66,11 @@ export default function MemberSection() {
               {benefits.map((b) => (
                 <div
                   key={b.title}
-                  className="rounded-2xl p-5 border border-teal/15 bg-teal/5 hover:border-teal/30 transition-colors duration-200"
+                  className="rounded-2xl p-5 border border-orange/15 bg-orange/5 hover:border-orange/30 transition-colors duration-200"
                 >
-                  <span className="text-[28px] mb-3 block">{b.icon}</span>
+                  <div className="w-10 h-10 bg-orange/15 border border-orange/25 rounded-xl flex items-center justify-center text-orange text-[16px] mb-4">
+                    {b.icon}
+                  </div>
                   <div className="font-condensed font-bold text-[16px] text-text mb-1">
                     {b.title}
                   </div>

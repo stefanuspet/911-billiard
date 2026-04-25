@@ -26,16 +26,16 @@ export default function CityFilter() {
 
   return (
     <>
-      {/* Filter buttons */}
-      <div className="flex gap-[6px] flex-wrap mb-10">
+      {/* Filter pills */}
+      <div className="flex gap-2 flex-wrap mb-10">
         {cities.map((city) => (
           <button
             key={city}
             onClick={() => setActiveCity(city)}
-            className={`font-condensed font-bold text-[13px] tracking-[0.5px] px-[18px] py-[7px] border transition-colors duration-200 cursor-pointer ${
+            className={`font-body text-[12px] tracking-[0.5px] px-4 py-[7px] rounded-full border transition-colors duration-200 cursor-pointer ${
               activeCity === city
-                ? "bg-orange text-black border-orange"
-                : "bg-bg-3 text-text-2 border-border hover:bg-orange hover:text-black hover:border-orange"
+                ? "bg-orange text-black border-orange font-semibold"
+                : "bg-bg-3 text-text-2 border-border hover:border-orange/50 hover:text-orange"
             }`}
           >
             {city}
@@ -44,13 +44,13 @@ export default function CityFilter() {
       </div>
 
       {/* Branch grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[1px] bg-border">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {filtered.length > 0 ? (
           filtered.map((branch) => (
             <BranchCard key={branch.id} branch={branch} />
           ))
         ) : (
-          <p className="text-text-3 col-span-3 py-10 text-center font-condensed text-[15px]">
+          <p className="text-text-3 col-span-3 py-16 text-center font-body text-[14px]">
             Tidak ada cabang ditemukan.
           </p>
         )}

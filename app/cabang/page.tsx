@@ -83,6 +83,67 @@ export default function CabangPage() {
         <div className="max-w-[1140px] mx-auto px-5 sm:px-10 pb-12 sm:pb-20">
           <CityFilter />
         </div>
+
+        {/* Bottom CTA Banner */}
+        <div className="px-5 sm:px-10 pb-16 sm:pb-24">
+          <div className="max-w-[1140px] mx-auto">
+            <div className="relative rounded-3xl overflow-hidden min-h-[320px] flex items-center">
+              {/* Background image */}
+              <Image
+                src="/images/hero/hero.jpg"
+                alt=""
+                fill
+                className="object-cover brightness-[0.35]"
+                sizes="100vw"
+                aria-hidden="true"
+              />
+
+              {/* Orange glow */}
+              <div
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                  background:
+                    "radial-gradient(ellipse at 25% 50%, rgba(232,146,10,0.22) 0%, transparent 60%)",
+                }}
+              />
+
+              {/* Content */}
+              <div className="relative z-10 px-8 sm:px-14 py-12 max-w-[580px]">
+                <div className="font-condensed font-bold text-[11px] tracking-[3px] uppercase text-orange mb-3">
+                  BELUM NEMUIN YANG PAS?
+                </div>
+                <h2 className="font-condensed font-black text-[clamp(28px,4vw,52px)] leading-none mb-4">
+                  Zona Baru Terus{" "}
+                  <span className="text-orange">Bertambah</span>
+                </h2>
+                <p className="font-body text-text-2 text-[14px] max-w-[380px] mb-8 leading-[1.8]">
+                  Tidak menemukan cabang di kotamu? Hubungi kami — tim 911
+                  Billiard siap bantu dan update info zona terbaru.
+                </p>
+                <a
+                  href="https://wa.me/6281990819911"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-orange text-black font-condensed font-bold text-[13px] tracking-[1px] uppercase px-8 py-[12px] rounded-xl hover:bg-orange-2 transition-colors duration-200"
+                >
+                  Tanya via WhatsApp →
+                </a>
+              </div>
+
+              {/* Mascot */}
+              <div className="absolute right-8 bottom-0 hidden lg:block pointer-events-none z-10">
+                <Image
+                  src="/images/maskot/maskot_3.png"
+                  alt=""
+                  width={260}
+                  height={362}
+                  className="object-contain"
+                  aria-hidden="true"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
       </main>
     </>
   );

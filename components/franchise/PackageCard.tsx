@@ -17,10 +17,14 @@ export default function PackageCard({
 }: PackageCardProps) {
   return (
     <div
-      className={`bg-bg-2 p-8 flex flex-col${featured ? " border-t-[3px] border-orange" : ""}`}
+      className={`bg-bg-2 rounded-2xl p-8 flex flex-col border transition-colors duration-200${
+        featured
+          ? " border-orange/50 hover:border-orange"
+          : " border-white/8 hover:border-orange/30"
+      }`}
     >
       {featured && (
-        <div className="inline-block bg-orange text-black font-condensed font-bold text-[11px] tracking-[2px] uppercase px-3 py-1 mb-4 self-start">
+        <div className="inline-block bg-orange text-black font-condensed font-bold text-[11px] tracking-[2px] uppercase px-3 py-[5px] rounded-full mb-4 self-start">
           PALING POPULER
         </div>
       )}
@@ -29,7 +33,7 @@ export default function PackageCard({
         {name}
       </div>
 
-      <div className="font-condensed text-[38px] text-orange leading-none mb-1">
+      <div className="font-condensed font-black text-[38px] text-orange leading-none mb-1">
         {price}
       </div>
       {priceNote && (

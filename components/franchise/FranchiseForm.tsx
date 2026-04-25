@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 const inputClass =
-  "w-full bg-bg-3 border border-border-2 text-text font-body text-[14px] px-[14px] py-[10px] rounded-none outline-none focus:border-orange transition-colors duration-200";
+  "w-full bg-bg-3 border border-border-2 text-text font-body text-[14px] px-[14px] py-[10px] rounded-xl outline-none focus:border-orange transition-colors duration-200";
 
 const labelClass =
   "font-condensed font-bold text-[11px] tracking-[1.5px] uppercase text-text-2 block mb-1.5";
@@ -52,7 +52,7 @@ export default function FranchiseForm() {
           <div className="font-condensed font-bold text-[11px] tracking-[4px] uppercase text-orange mb-3">
             MULAI SEKARANG
           </div>
-          <h2 className="font-condensed text-[clamp(32px,4vw,52px)] leading-none tracking-[1px] mb-2">
+          <h2 className="font-condensed font-black text-[clamp(32px,4vw,52px)] leading-none mb-2">
             DAFTAR FRANCHISE
           </h2>
           <p className="text-text-2 text-[14px] mb-10">
@@ -167,7 +167,7 @@ export default function FranchiseForm() {
 
             <button
               type="submit"
-              className="w-full bg-orange text-black font-condensed font-bold text-[15px] tracking-[1px] uppercase py-[14px] hover:bg-orange-2 transition-colors duration-200 cursor-pointer"
+              className="w-full bg-orange text-black font-condensed font-bold text-[15px] tracking-[1px] uppercase py-[14px] rounded-xl hover:bg-orange-2 transition-colors duration-200 cursor-pointer"
             >
               Kirim via WhatsApp →
             </button>

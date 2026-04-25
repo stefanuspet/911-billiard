@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Button from "@/components/ui/Button";
 import SectionTag from "@/components/ui/SectionTag";
 import { FaCheckCircle } from "react-icons/fa";
@@ -12,7 +13,7 @@ export default function FranchiseCTA() {
         className="absolute inset-0 z-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse at 20% 50%, rgba(232,146,10,0.07) 0%, transparent 55%), radial-gradient(ellipse at 80% 50%, rgba(0,180,200,0.08) 0%, transparent 55%)",
+            "radial-gradient(ellipse at 20% 50%, rgba(232,146,10,0.08) 0%, transparent 55%), radial-gradient(ellipse at 80% 50%, rgba(232,146,10,0.04) 0%, transparent 55%)",
         }}
       />
 
@@ -36,36 +37,56 @@ export default function FranchiseCTA() {
       {/* Content */}
       <div className="relative z-10 max-w-[1140px] mx-auto">
         <div
-          className="rounded-3xl border border-white/8 p-10 sm:p-16 text-center"
+          className="rounded-3xl border border-white/8 overflow-hidden"
           style={{
             background: "rgba(255,255,255,0.03)",
             backdropFilter: "blur(8px)",
           }}
         >
-          <div className="flex justify-center mb-4">
-            <SectionTag>PELUANG BISNIS</SectionTag>
-          </div>
-          <h2 className="font-condensed font-black text-[clamp(38px,6vw,68px)] leading-none uppercase mb-4">
-            Buka Cabang <span className="text-orange">911 Billiard</span>
-          </h2>
-          <p className="font-body text-text-2 text-[15px] max-w-[440px] mx-auto mb-8 leading-[1.8]">
-            Bergabung dengan jaringan billiard terbesar di Indonesia dan mulai
-            bisnis menguntungkan bersama kami.
-          </p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 items-end">
+            {/* Left — text */}
+            <div className="px-10 sm:px-14 pt-12 sm:pt-16 pb-12 sm:pb-16">
+              <SectionTag>PELUANG BISNIS</SectionTag>
+              <h2 className="font-condensed font-black text-[clamp(36px,5vw,62px)] leading-none uppercase mt-4 mb-4">
+                Buka Cabang <span className="text-orange">911 Billiard</span>
+              </h2>
+              <p className="font-body text-text-2 text-[15px] max-w-[400px] mb-8 leading-[1.8]">
+                Bergabung dengan jaringan billiard terbesar di Indonesia dan
+                mulai bisnis menguntungkan bersama kami.
+              </p>
 
-          {/* Perks row */}
-          <div className="flex flex-wrap justify-center gap-4 mb-10">
-            {perks.map((p) => (
-              <div key={p} className="flex items-center gap-2">
-                <FaCheckCircle size={13} className="text-teal" />
-                <span className="font-body text-[13px] text-text-2">{p}</span>
+              {/* Perks */}
+              <div className="flex flex-col sm:flex-row flex-wrap gap-3 mb-10">
+                {perks.map((p) => (
+                  <div key={p} className="flex items-center gap-2">
+                    <FaCheckCircle
+                      size={13}
+                      className="text-orange flex-shrink-0"
+                    />
+                    <span className="font-body text-[13px] text-text-2">
+                      {p}
+                    </span>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
 
-          <Button href="/franchise" variant="primary">
-            Pelajari Paket Franchise →
-          </Button>
+              <Button href="/franchise" variant="primary">
+                Pelajari Paket Franchise →
+              </Button>
+            </div>
+
+            {/* Right — mascot */}
+            <div className="hidden lg:flex justify-center items-center px-8 pt-8 pb-16">
+              <Image
+                src="/images/maskot/maskot_1.png"
+                alt=""
+                width={340}
+                height={460}
+                className="object-contain w-auto max-h-[420px]"
+                aria-hidden="true"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>

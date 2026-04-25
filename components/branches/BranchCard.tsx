@@ -7,7 +7,7 @@ interface BranchCardProps {
 
 export default function BranchCard({ branch }: BranchCardProps) {
   return (
-    <div className="bg-bg-2 border border-white/8 rounded-2xl overflow-hidden cursor-pointer group hover:border-teal/30 transition-colors duration-300">
+    <div className="bg-bg-2 border border-white/8 rounded-2xl overflow-hidden cursor-pointer group hover:border-orange/30 transition-colors duration-300">
       {/* Image */}
       <div className="relative h-[170px] overflow-hidden">
         <Image
@@ -21,7 +21,7 @@ export default function BranchCard({ branch }: BranchCardProps) {
         <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, transparent 50%, rgba(17,17,17,0.8) 100%)" }} />
 
         {/* Zone pill */}
-        <div className="absolute top-3 left-3 bg-bg/75 backdrop-blur-sm border border-teal/30 text-teal font-body text-[10px] tracking-[1.5px] uppercase px-2 py-[3px] rounded-full">
+        <div className="absolute top-3 left-3 bg-bg/75 backdrop-blur-sm border border-orange/30 text-orange font-body text-[10px] tracking-[1.5px] uppercase px-2 py-[3px] rounded-full">
           {branch.zone}
         </div>
       </div>
@@ -41,7 +41,7 @@ export default function BranchCard({ branch }: BranchCardProps) {
         {/* Meta */}
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-baseline gap-1">
-            <span className="font-condensed font-bold text-[22px] text-teal leading-none">
+            <span className="font-condensed font-bold text-[22px] text-orange leading-none">
               {branch.tables}
             </span>
             <span className="font-body text-[11px] text-text-3">meja</span>
