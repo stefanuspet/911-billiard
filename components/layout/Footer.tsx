@@ -36,7 +36,7 @@ export default function Footer() {
               22+ zona seluruh Indonesia.
               <br />
               <br />
-              Managed by Ayo Bangun Bangsa
+              Managed by PT Ayo Bangun Bangsa
             </p>
             {/* Social icons */}
             <div className="flex gap-3">
@@ -48,7 +48,9 @@ export default function Footer() {
                 className="flex items-center gap-2 text-text-2 hover:text-orange transition-colors duration-200"
               >
                 <FaInstagram size={20} />
-                <span className="font-condensed font-bold text-[11px] tracking-[1px] uppercase">Instagram</span>
+                <span className="font-condensed font-bold text-[11px] tracking-[1px] uppercase">
+                  Instagram
+                </span>
               </a>
               <a
                 href="https://www.tiktok.com/@911.billiard"
@@ -58,7 +60,9 @@ export default function Footer() {
                 className="flex items-center gap-2 text-text-2 hover:text-orange transition-colors duration-200"
               >
                 <FaTiktok size={18} />
-                <span className="font-condensed font-bold text-[11px] tracking-[1px] uppercase">TikTok</span>
+                <span className="font-condensed font-bold text-[11px] tracking-[1px] uppercase">
+                  TikTok
+                </span>
               </a>
             </div>
           </div>

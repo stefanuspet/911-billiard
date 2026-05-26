@@ -1,7 +1,7 @@
 import { Barlow_Condensed, Nunito_Sans } from "next/font/google";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
+import ConditionalShell from "@/components/layout/ConditionalShell";
 import { baseMetadata } from "@/lib/metadata";
+import { SanityLive } from "@/sanity/lib/live";
 import "./globals.css";
 
 export { baseMetadata as metadata };
@@ -31,9 +31,8 @@ export default function RootLayout({
       className={`${barlowCondensed.variable} ${nunitoSans.variable}`}
     >
       <body>
-        <Navbar />
-        {children}
-        <Footer />
+        <ConditionalShell>{children}</ConditionalShell>
+        <SanityLive />
       </body>
     </html>
   );

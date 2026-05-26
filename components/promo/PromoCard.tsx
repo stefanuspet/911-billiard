@@ -1,5 +1,8 @@
 import Image from "next/image";
-import type { Promo } from "@/types";
+import { urlFor } from "@/sanity/lib/image";
+import type { ALL_PROMOS_QUERY_RESULT } from "@/sanity.types";
+
+type Promo = ALL_PROMOS_QUERY_RESULT[number];
 
 interface PromoCardProps {
   promo: Promo;
@@ -7,6 +10,10 @@ interface PromoCardProps {
 }
 
 export default function PromoCard({ promo, featured = false }: PromoCardProps) {
+  const imgSrc = promo.photo
+    ? urlFor(promo.photo).width(900).height(600).url()
+    : `https://picsum.photos/seed/promo-${promo._id}/800/600`;
+
   if (featured) {
     return (
       <div
@@ -16,11 +23,10 @@ export default function PromoCard({ promo, featured = false }: PromoCardProps) {
             : " border-white/8 hover:border-orange/30"
         }`}
       >
-        {/* Image — wider on desktop */}
         <div className="relative h-[220px] sm:h-auto sm:w-[52%] shrink-0 overflow-hidden">
           <Image
-            src={promo.photo}
-            alt={promo.title}
+            src={imgSrc}
+            alt={promo.title ?? ""}
             fill
             className="object-cover brightness-75 group-hover:brightness-90 group-hover:scale-105 transition-all duration-500"
             sizes="(max-width: 640px) 100vw, 52vw"
@@ -35,7 +41,6 @@ export default function PromoCard({ promo, featured = false }: PromoCardProps) {
           )}
         </div>
 
-        {/* Body */}
         <div className="flex flex-col justify-center p-7 sm:p-10">
           <h3 className="font-condensed font-black text-[clamp(22px,3vw,34px)] leading-tight mb-3">
             {promo.title}
@@ -61,8 +66,8 @@ export default function PromoCard({ promo, featured = false }: PromoCardProps) {
     >
       <div className="relative h-[190px] overflow-hidden">
         <Image
-          src={promo.photo}
-          alt={promo.title}
+          src={imgSrc}
+          alt={promo.title ?? ""}
           fill
           className="object-cover brightness-75 group-hover:brightness-90 group-hover:scale-105 transition-all duration-500"
           sizes="(max-width: 768px) 100vw, 50vw"
@@ -72,12 +77,8 @@ export default function PromoCard({ promo, featured = false }: PromoCardProps) {
         </div>
       </div>
       <div className="p-6">
-        <h3 className="font-condensed font-bold text-[18px] mb-2">
-          {promo.title}
-        </h3>
-        <p className="font-body text-[13px] text-text-2 leading-relaxed mb-4">
-          {promo.description}
-        </p>
+        <h3 className="font-condensed font-bold text-[18px] mb-2">{promo.title}</h3>
+        <p className="font-body text-[13px] text-text-2 leading-relaxed mb-4">{promo.description}</p>
         <div className="font-condensed font-bold text-[11px] tracking-[1px] uppercase text-orange border-t border-border pt-4">
           {promo.validInfo}
         </div>

@@ -1,5 +1,8 @@
 import Image from "next/image";
-import type { MerchItem } from "@/types";
+import { urlFor } from "@/sanity/lib/image";
+import type { ALL_MERCHANDISE_QUERY_RESULT } from "@/sanity.types";
+
+type MerchItem = ALL_MERCHANDISE_QUERY_RESULT[number];
 
 interface MerchCardProps {
   item: MerchItem;
@@ -15,8 +18,8 @@ export default function MerchCard({ item }: MerchCardProps) {
       {/* Image */}
       <div className="relative h-[210px] overflow-hidden">
         <Image
-          src={item.photo}
-          alt={item.name}
+          src={item.photo ? urlFor(item.photo).width(600).height(600).url() : ""}
+          alt={item.name ?? ""}
           fill
           className="object-cover brightness-[0.85] group-hover:brightness-100 group-hover:scale-105 transition-all duration-500"
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
@@ -34,15 +37,15 @@ export default function MerchCard({ item }: MerchCardProps) {
           {item.name}
         </div>
         <div className="font-condensed font-black text-[22px] text-orange leading-none mb-4">
-          {formatPrice(item.price)}
-          {item.originalPrice && (
+          {item.price != null ? formatPrice(item.price) : "-"}
+          {item.originalPrice != null && (
             <span className="font-body text-[13px] text-text-3 line-through ml-2">
               {formatPrice(item.originalPrice)}
             </span>
           )}
         </div>
         <a
-          href={item.tokopediaUrl}
+          href={item.tokopediaUrl ?? undefined}
           target="_blank"
           rel="noopener noreferrer"
           className="block w-full bg-bg-3 border border-border-2 text-text-2 font-body text-[12px] uppercase py-[9px] text-center rounded-xl hover:bg-orange hover:text-black hover:border-orange transition-colors duration-200"

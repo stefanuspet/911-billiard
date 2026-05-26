@@ -1,12 +1,7 @@
 import Button from "@/components/ui/Button";
+import type { ALL_FRANCHISE_PACKAGES_QUERY_RESULT } from "@/sanity.types";
 
-interface PackageCardProps {
-  name: string;
-  price: string;
-  priceNote?: string;
-  features: string[];
-  featured?: boolean;
-}
+type PackageCardProps = ALL_FRANCHISE_PACKAGES_QUERY_RESULT[number];
 
 export default function PackageCard({
   name,
@@ -42,7 +37,7 @@ export default function PackageCard({
       {!priceNote && <div className="mb-6" />}
 
       <ul className="space-y-3 flex-1 mb-8">
-        {features.map((f) => (
+        {(features ?? []).map((f) => (
           <li key={f} className="flex items-start gap-3">
             <span className="text-orange font-condensed text-[16px] leading-none mt-[3px]">
               ✓

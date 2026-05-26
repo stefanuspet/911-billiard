@@ -16,6 +16,10 @@ export const baseMetadata: Metadata = {
     type: "website",
     images: ["/images/og-image.jpg"],
   },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/images/og-image.jpg"],
+  },
 };
 
 export function buildOrganizationSchema() {

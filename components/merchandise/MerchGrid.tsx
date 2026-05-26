@@ -1,13 +1,17 @@
 import MerchCard from "@/components/merchandise/MerchCard";
-import { merchandise } from "@/data/merchandise";
+import type { ALL_MERCHANDISE_QUERY_RESULT } from "@/sanity.types";
 
-export default function MerchGrid() {
+interface MerchGridProps {
+  merchandise: ALL_MERCHANDISE_QUERY_RESULT;
+}
+
+export default function MerchGrid({ merchandise }: MerchGridProps) {
   return (
     <>
       {/* Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-8">
         {merchandise.map((item) => (
-          <MerchCard key={item.id} item={item} />
+          <MerchCard key={item._id} item={item} />
         ))}
       </div>
 

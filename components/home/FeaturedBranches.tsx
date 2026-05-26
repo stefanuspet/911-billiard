@@ -1,11 +1,14 @@
 import BranchCard from "@/components/branches/BranchCard";
 import Button from "@/components/ui/Button";
 import SectionTag from "@/components/ui/SectionTag";
-import { branches } from "@/data/branches";
+import { client } from "@/sanity/lib/client";
+import { ALL_BRANCHES_QUERY } from "@/sanity/lib/queries";
+import type { ALL_BRANCHES_QUERY_RESULT } from "@/sanity.types";
 
-const featuredBranches = branches.slice(0, 6);
+export default async function FeaturedBranches() {
+  const branches: ALL_BRANCHES_QUERY_RESULT = await client.fetch(ALL_BRANCHES_QUERY);
+  const featuredBranches = branches.slice(0, 6);
 
-export default function FeaturedBranches() {
   return (
     <section className="bg-bg py-16 sm:py-24 px-5 sm:px-10">
       <div className="max-w-[1140px] mx-auto">
@@ -28,7 +31,7 @@ export default function FeaturedBranches() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {featuredBranches.map((branch) => (
-            <BranchCard key={branch.id} branch={branch} />
+            <BranchCard key={branch._id} branch={branch} />
           ))}
         </div>
       </div>

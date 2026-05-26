@@ -8,7 +8,6 @@ const keunggulan = [
   "SOP operasional terstandarisasi",
   "Training staff by franchisor",
   "Support marketing digital & offline",
-  "ROI 18–24 bulan rata-rata",
 ];
 
 export default function FranchiseHero() {
@@ -28,7 +27,7 @@ export default function FranchiseHero() {
               Bergabunglah dengan jaringan billiard terbesar di Indonesia.
               Dapatkan dukungan penuh mulai dari desain interior, SOP, training,
               hingga marketing. Modal mulai{" "}
-              <span className="text-text font-semibold">Rp 150 juta</span>.
+              <span className="text-text font-semibold">Rp 800 juta</span>.
             </p>
 
             {/* Keunggulan — mini card grid */}
@@ -74,13 +73,13 @@ export default function FranchiseHero() {
               </div>
             </div>
 
-            {/* Floating badge — ROI */}
+            {/* Floating badge — Luas Minimum */}
             <div className="absolute top-36 -left-6 z-10 bg-bg-2 border border-white/10 rounded-2xl px-4 py-3">
               <div className="font-condensed font-black text-[22px] text-orange leading-none">
-                &lt; 24 Bln
+                500 m²
               </div>
               <div className="font-condensed font-bold text-[10px] tracking-[1.5px] uppercase text-text-3 mt-[2px]">
-                Rata-rata ROI
+                Luas Minimum
               </div>
             </div>
 

@@ -3,7 +3,7 @@ import Button from "@/components/ui/Button";
 import SectionTag from "@/components/ui/SectionTag";
 import { FaCheckCircle } from "react-icons/fa";
 
-const perks = ["Modal mulai Rp 150 juta", "Support tim 911", "ROI < 24 bulan"];
+const perks = ["Modal mulai Rp 800 juta", "Support tim 911"];
 
 export default function FranchiseCTA() {
   return (

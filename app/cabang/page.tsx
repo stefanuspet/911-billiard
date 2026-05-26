@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import PageHeader from "@/components/ui/PageHeader";
 import CityFilter from "@/components/branches/CityFilter";
-import { branches } from "@/data/branches";
+import { sanityFetch } from "@/sanity/lib/live";
+import { ALL_BRANCHES_QUERY } from "@/sanity/lib/queries";
+import type { ALL_BRANCHES_QUERY_RESULT } from "@/sanity.types";
 
 export const metadata: Metadata = {
   title: "Cabang 911 Billiard — 22+ Zona di Seluruh Indonesia",
@@ -19,41 +21,36 @@ export const metadata: Metadata = {
   },
 };
 
-const localBusinessSchema = {
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  name: "Cabang 911 Billiard",
-  numberOfItems: branches.length,
-  itemListElement: branches.map((branch, index) => ({
-    "@type": "ListItem",
-    position: index + 1,
-    item: {
-      "@type": "SportsActivityLocation",
-      name: `911 Billiard ${branch.name}`,
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: branch.address,
-        addressLocality: branch.city,
-        addressRegion: branch.province,
-        addressCountry: "ID",
+function buildLocalBusinessSchema(branches: ALL_BRANCHES_QUERY_RESULT) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Cabang 911 Billiard",
+    numberOfItems: branches.length,
+    itemListElement: branches.map((branch, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: {
+        "@type": "SportsActivityLocation",
+        name: `911 Billiard ${branch.name}`,
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: branch.address,
+          addressLocality: branch.city,
+          addressRegion: branch.province,
+          addressCountry: "ID",
+        },
+        openingHours: `Mo-Su ${branch.openHour}-${branch.closeHour}`,
+        url: branch.mapsUrl,
       },
-      ...(branch.lat && branch.lng
-        ? {
-            geo: {
-              "@type": "GeoCoordinates",
-              latitude: branch.lat,
-              longitude: branch.lng,
-            },
-          }
-        : {}),
-      openingHours: `Mo-Su ${branch.openHour}-${branch.closeHour}`,
-      telephone: branch.waNumber ?? "+62-819-9081-9911",
-      url: branch.mapsUrl,
-    },
-  })),
-};
+    })),
+  };
+}
 
-export default function CabangPage() {
+export default async function CabangPage() {
+  const { data: branches } = await sanityFetch({ query: ALL_BRANCHES_QUERY }) as { data: ALL_BRANCHES_QUERY_RESULT };
+  const localBusinessSchema = buildLocalBusinessSchema(branches);
+
   return (
     <>
       <script
@@ -81,7 +78,7 @@ export default function CabangPage() {
           </div>
         </div>
         <div className="max-w-[1140px] mx-auto px-5 sm:px-10 pb-12 sm:pb-20">
-          <CityFilter />
+          <CityFilter branches={branches} />
         </div>
 
         {/* Bottom CTA Banner */}

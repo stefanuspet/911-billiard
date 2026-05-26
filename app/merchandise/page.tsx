@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import PageHeader from "@/components/ui/PageHeader";
 import MerchGrid from "@/components/merchandise/MerchGrid";
+import { sanityFetch } from "@/sanity/lib/live";
+import { ALL_MERCHANDISE_QUERY } from "@/sanity/lib/queries";
+import type { ALL_MERCHANDISE_QUERY_RESULT } from "@/sanity.types";
 
 export const metadata: Metadata = {
   title: "Merchandise 911 Billiard — Official Store",
@@ -17,7 +20,9 @@ export const metadata: Metadata = {
   },
 };
 
-export default function MerchandisePage() {
+export default async function MerchandisePage() {
+  const { data: merchandise } = await sanityFetch({ query: ALL_MERCHANDISE_QUERY }) as { data: ALL_MERCHANDISE_QUERY_RESULT };
+
   return (
     <main>
       <PageHeader
@@ -26,7 +31,7 @@ export default function MerchandisePage() {
         subtitle="Produk resmi 911 Billiard. Tersedia di Tokopedia."
       />
       <div className="max-w-[1140px] mx-auto px-5 sm:px-10 pb-12 sm:pb-20">
-        <MerchGrid />
+        <MerchGrid merchandise={merchandise} />
       </div>
     </main>
   );

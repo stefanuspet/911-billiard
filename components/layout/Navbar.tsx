@@ -11,6 +11,7 @@ const navLinks = [
   { href: "/merchandise", label: "Merchandise" },
   { href: "/franchise", label: "Franchise" },
   { href: "/promo", label: "Promo & Event" },
+  { href: "/blog", label: "Blog" },
   { href: "/tentang", label: "Tentang" },
   { href: "/kontak", label: "Kontak" },
 ];

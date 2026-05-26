@@ -1,4 +1,9 @@
-import { FaShieldAlt, FaChartLine, FaHeadset, FaPaintBrush } from "react-icons/fa";
+import {
+  FaShieldAlt,
+  FaChartLine,
+  FaHeadset,
+  FaPaintBrush,
+} from "react-icons/fa";
 
 const reasons = [
   {
@@ -7,12 +12,12 @@ const reasons = [
     title: "Zona Terbukti",
     desc: "Jaringan aktif di 10+ kota, brand sudah dikenal luas.",
   },
-  {
-    icon: <FaChartLine />,
-    number: "< 24 Bln",
-    title: "Balik Modal",
-    desc: "Rata-rata ROI franchisee kami dalam 18–24 bulan.",
-  },
+  // {
+  //   icon: <FaChartLine />,
+  //   number: "< 24 Bln",
+  //   title: "Balik Modal",
+  //   desc: "Rata-rata ROI franchisee kami dalam 18–24 bulan.",
+  // },
   {
     icon: <FaHeadset />,
     number: "Full",

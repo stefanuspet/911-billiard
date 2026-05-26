@@ -21,7 +21,7 @@ export default function FranchiseForm() {
   function handleChange(
     e: React.ChangeEvent<
       HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
-    >
+    >,
   ) {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   }
@@ -38,15 +38,12 @@ export default function FranchiseForm() {
       `Pesan: ${form.pesan || "-"}`;
     window.open(
       `https://wa.me/6281990819911?text=${encodeURIComponent(msg)}`,
-      "_blank"
+      "_blank",
     );
   }
 
   return (
-    <section
-      id="franchise-form"
-      className="bg-bg-2 border-t border-border"
-    >
+    <section id="franchise-form" className="bg-bg-2 border-t border-border">
       <div className="max-w-[1140px] mx-auto px-5 sm:px-10 py-12 sm:py-20">
         <div className="max-w-[680px] mx-auto">
           <div className="font-condensed font-bold text-[11px] tracking-[4px] uppercase text-orange mb-3">
@@ -138,14 +135,8 @@ export default function FranchiseForm() {
                 className={inputClass}
               >
                 <option value="">— Pilih paket —</option>
-                <option value="Starter Zone (Rp 150 Jt)">
-                  Starter Zone (Rp 150 Jt)
-                </option>
-                <option value="Standard Zone (Rp 250 Jt)">
-                  Standard Zone (Rp 250 Jt)
-                </option>
-                <option value="Premium Zone (Rp 450 Jt)">
-                  Premium Zone (Rp 450 Jt)
+                <option value="Starter Zone (Rp 800 Jt)">
+                  Starter Zone (Rp 800 Jt)
                 </option>
               </select>
             </div>

@@ -2,27 +2,24 @@
 
 import { useState } from "react";
 import BranchCard from "@/components/branches/BranchCard";
-import { branches } from "@/data/branches";
+import type { ALL_BRANCHES_QUERY_RESULT } from "@/sanity.types";
 
-const cities = [
-  "Semua",
-  "Jakarta",
-  "Tangerang",
-  "Depok",
-  "Yogyakarta",
-  "Solo",
-  "Pontianak",
-  "Singkawang",
-  "Balikpapan",
-];
+interface CityFilterProps {
+  branches: ALL_BRANCHES_QUERY_RESULT;
+}
 
-export default function CityFilter() {
+export default function CityFilter({ branches }: CityFilterProps) {
   const [activeCity, setActiveCity] = useState("Semua");
+
+  const cities = [
+    "Semua",
+    ...Array.from(new Set(branches.map((b) => b.city).filter((c): c is string => !!c))).sort(),
+  ];
 
   const filtered =
     activeCity === "Semua"
       ? branches
-      : branches.filter((b) => b.city.includes(activeCity));
+      : branches.filter((b) => b.city?.includes(activeCity));
 
   return (
     <>
@@ -47,7 +44,7 @@ export default function CityFilter() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {filtered.length > 0 ? (
           filtered.map((branch) => (
-            <BranchCard key={branch.id} branch={branch} />
+            <BranchCard key={branch._id} branch={branch} />
           ))
         ) : (
           <p className="text-text-3 col-span-3 py-16 text-center font-body text-[14px]">
