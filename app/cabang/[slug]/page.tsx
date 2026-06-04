@@ -3,9 +3,8 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { sanityFetch } from '@/sanity/lib/live'
-import { BRANCH_BY_SLUG_QUERY, MENU_BY_BRANCH_QUERY, ALL_BRANCH_SLUGS_QUERY } from '@/sanity/lib/queries'
+import { BRANCH_BY_SLUG_QUERY, ALL_BRANCH_SLUGS_QUERY } from '@/sanity/lib/queries'
 import { urlFor } from '@/sanity/lib/image'
-import MenuSection from '@/components/branches/MenuSection'
 import GalleryLightbox from '@/components/branches/GalleryLightbox'
 
 interface Props {
@@ -28,16 +27,7 @@ type Branch = {
   mapsUrl: string | null
   photo: SanityImage | null
   gallery: (SanityImage & { _key?: string })[] | null
-}
-
-type MenuItem = {
-  _id: string
-  name: string | null
-  price: number | null
-  description: string | null
-  photo: unknown
-  category: string | null
-  available: boolean | null
+  menuImages: (SanityImage & { _key?: string })[] | null
 }
 
 export async function generateStaticParams() {
@@ -64,10 +54,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function BranchDetailPage({ params }: Props) {
   const { slug } = await params
-  const [{ data: branch }, { data: menuItems }] = await Promise.all([
-    sanityFetch({ query: BRANCH_BY_SLUG_QUERY, params: { slug } }) as Promise<{ data: Branch | null }>,
-    sanityFetch({ query: MENU_BY_BRANCH_QUERY, params: { slug } }) as Promise<{ data: MenuItem[] }>,
-  ])
+  const { data: branch } = await sanityFetch({ query: BRANCH_BY_SLUG_QUERY, params: { slug } }) as { data: Branch | null }
 
   if (!branch) notFound()
 
@@ -257,8 +244,38 @@ export default async function BranchDetailPage({ params }: Props) {
               </section>
             )}
 
-            {/* Menu */}
-            <MenuSection items={menuItems} />
+            {/* Menu Pricelist */}
+            {(branch.menuImages ?? []).length > 0 && (
+              <section>
+                <h2 className="font-condensed font-black text-[clamp(24px,3vw,36px)] leading-none mb-6">
+                  MENU <span className="text-orange">CAFE</span>
+                </h2>
+                <div className="flex flex-col gap-4">
+                  {(branch.menuImages ?? []).map((img, i) => (
+                    <a
+                      key={img._key ?? i}
+                      href={urlFor(img as Parameters<typeof urlFor>[0]).url()}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block relative rounded-2xl overflow-hidden border border-white/8 hover:border-orange/30 transition-colors group"
+                    >
+                      <Image
+                        src={urlFor(img as Parameters<typeof urlFor>[0]).width(900).url()}
+                        alt={`Menu Cafe 911 Billiard ${branch.name} ${i + 1}`}
+                        width={900}
+                        height={600}
+                        className="w-full h-auto"
+                      />
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                        <span className="opacity-0 group-hover:opacity-100 transition-opacity bg-black/70 text-white font-body text-[12px] px-4 py-2 rounded-full">
+                          Lihat Ukuran Penuh →
+                        </span>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              </section>
+            )}
           </div>
         </div>
       </div>

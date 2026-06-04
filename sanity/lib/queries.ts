@@ -47,7 +47,7 @@ export const ALL_BRANCH_SLUGS_QUERY = defineQuery(`
 
 export const BRANCH_BY_SLUG_QUERY = defineQuery(`
   *[_type == "branch" && slug.current == $slug][0] {
-    _id, zone, name, city, province, address, tables, tags, openHour, closeHour, mapsUrl, photo, gallery
+    _id, zone, name, city, province, address, tables, tags, openHour, closeHour, mapsUrl, photo, gallery, menuImages
   }
 `);
 

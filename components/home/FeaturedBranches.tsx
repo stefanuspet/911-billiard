@@ -1,12 +1,12 @@
 import BranchCard from "@/components/branches/BranchCard";
 import Button from "@/components/ui/Button";
 import SectionTag from "@/components/ui/SectionTag";
-import { client } from "@/sanity/lib/client";
+import { sanityFetch } from "@/sanity/lib/live";
 import { ALL_BRANCHES_QUERY } from "@/sanity/lib/queries";
 import type { ALL_BRANCHES_QUERY_RESULT } from "@/sanity.types";
 
 export default async function FeaturedBranches() {
-  const branches: ALL_BRANCHES_QUERY_RESULT = await client.fetch(ALL_BRANCHES_QUERY);
+  const { data: branches } = await sanityFetch({ query: ALL_BRANCHES_QUERY }) as { data: ALL_BRANCHES_QUERY_RESULT };
   const featuredBranches = branches.slice(0, 6);
 
   return (
