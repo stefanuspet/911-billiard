@@ -156,11 +156,22 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-border pt-6 flex justify-between items-center text-[12px] text-text-2">
+        <div className="border-t border-border pt-6 flex flex-col sm:flex-row justify-between items-center gap-2 text-[12px] text-text-2">
           <span>© 2026 911 Billiard™ — All rights reserved</span>
           <span className="text-orange font-condensed font-bold tracking-[1px]">
             #IAM911BILLIARD
           </span>
+        </div>
+        <div className="mt-3 text-center text-[11px] text-text-3">
+          Website by{" "}
+          <a
+            href="https://stefra.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-text transition-colors duration-200"
+          >
+            stefra.id
+          </a>
         </div>
       </div>
     </footer>

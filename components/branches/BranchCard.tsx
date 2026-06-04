@@ -40,7 +40,7 @@ export default function BranchCard({ branch }: { branch: Branch }) {
           }}
         />
         <div className="absolute top-3 left-3 z-10 bg-bg/75 backdrop-blur-sm border border-orange/30 text-orange font-body text-[10px] tracking-[1.5px] uppercase px-2 py-[3px] rounded-full">
-          {branch.zone}
+          {branch.city}
         </div>
         {href && (
           <div className="absolute bottom-3 right-3 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
@@ -75,11 +75,7 @@ export default function BranchCard({ branch }: { branch: Branch }) {
             {(branch.tags ?? []).map((tag) => (
               <span
                 key={tag}
-                className={`font-body text-[10px] px-2 py-[3px] rounded-full border ${
-                  tag === "VIP Room"
-                    ? "border-orange/30 text-orange bg-orange/8"
-                    : "border-border-2 text-text-3"
-                }`}
+                className="font-body text-[10px] px-2 py-[3px] rounded-full border border-white/12 text-text-3"
               >
                 {tag}
               </span>

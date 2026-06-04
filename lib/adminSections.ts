@@ -60,7 +60,6 @@ export const ADMIN_SECTIONS: Record<string, SectionDef> = {
     listFields: [
       { key: "name", label: "Nama Cabang" },
       { key: "city", label: "Kota" },
-      { key: "zone", label: "Zone" },
     ],
     fields: [
       { name: "name", label: "Nama Cabang", type: "text", required: true },
@@ -72,13 +71,6 @@ export const ADMIN_SECTIONS: Record<string, SectionDef> = {
         hint: "Auto-generate dari nama, atau isi manual. Dipakai untuk URL /cabang/[slug]",
         placeholder: "nama-cabang",
       },
-      {
-        name: "zone",
-        label: "Zone",
-        type: "text",
-        required: true,
-        placeholder: "Jakarta Selatan",
-      },
       { name: "city", label: "Kota", type: "text", required: true },
       { name: "province", label: "Provinsi", type: "text" },
       { name: "address", label: "Alamat Lengkap", type: "textarea" },
@@ -88,10 +80,13 @@ export const ADMIN_SECTIONS: Record<string, SectionDef> = {
         label: "Fasilitas",
         type: "tags",
         options: [
-          { value: "VIP Room", label: "VIP Room" },
           { value: "Cafe", label: "Cafe" },
+          { value: "Parking", label: "Parking" },
+          { value: "AC", label: "AC" },
+          { value: "VIP Room", label: "VIP Room" },
           { value: "GrabFood", label: "GrabFood" },
-          { value: "Lounge", label: "Lounge" },
+          { value: "Non-Smoking Room", label: "Non-Smoking Room" },
+          { value: "Service Center", label: "Service Center" },
         ],
       },
       { name: "openHour", label: "Jam Buka", type: "text", placeholder: "10:00" },

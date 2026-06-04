@@ -115,7 +115,7 @@ export default async function BranchDetailPage({ params }: Props) {
         <div className="absolute bottom-0 left-0 right-0 px-5 sm:px-10 pb-8 z-10">
           <div className="max-w-[1140px] mx-auto">
             <div className="inline-block bg-bg/75 backdrop-blur-sm border border-orange/30 text-orange font-body text-[10px] tracking-[1.5px] uppercase px-2.5 py-[4px] rounded-full mb-3">
-              {branch.zone}
+              {branch.city}
             </div>
             <h1 className="font-condensed font-black text-[clamp(32px,5vw,64px)] leading-none mb-2">
               911 BILLIARD <span className="text-orange">{branch.name?.toUpperCase()}</span>
@@ -201,11 +201,7 @@ export default async function BranchDetailPage({ params }: Props) {
                       {(branch.tags ?? []).map((tag) => (
                         <span
                           key={tag}
-                          className={`font-body text-[10px] px-2 py-[3px] rounded-full border ${
-                            tag === 'VIP Room'
-                              ? 'border-orange/30 text-orange bg-orange/8'
-                              : 'border-white/12 text-text-3'
-                          }`}
+                          className="font-body text-[10px] px-2 py-[3px] rounded-full border border-white/12 text-text-3"
                         >
                           {tag}
                         </span>
