@@ -20,6 +20,9 @@ export const baseMetadata: Metadata = {
     card: "summary_large_image",
     images: ["/images/og-image.jpg"],
   },
+  verification: {
+    google: "X0MOhrH-P5yXo3_GzGjGwdHCSWqrSVS3qotrpHMvo0Q",
+  },
 };
 
 export function buildOrganizationSchema() {
